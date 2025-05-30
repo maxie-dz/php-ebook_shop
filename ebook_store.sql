@@ -178,8 +178,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `name`, `email`, `password`, `created_at`, `profile_pic`) VALUES
-(6, NULL, 'maxie', 'lammminnne2004@gmail.com', '$2y$10$7gp14xuChmsoT5RFMSh2v.7I/ittihCQatYWU/9545HKWaWc63d2y', '2025-05-29 20:22:14', 'uploads/pfp_6.jpg');
+
 
 --
 -- Indexes for dumped tables
