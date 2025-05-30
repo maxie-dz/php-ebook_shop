@@ -108,8 +108,8 @@ if (!$ebook) {
             $mail->isSMTP();
             $mail->Host = 'smtp.example.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'lamminne2004@gmail.com';
-            $mail->Password = 'lamminne2004@gmail.com';
+            $mail->Username = '';
+            $mail->Password = '';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
