@@ -1,0 +1,16 @@
+{
+    "name": "belarouci/ebook-store",
+    "autoload": {
+        "psr-4": {
+            "Belarouci\\EbookStore\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "belarouci"
+        }
+    ],
+    "require": {
+        "paypal/paypal-sdk": "^1.0"
+    }
+}

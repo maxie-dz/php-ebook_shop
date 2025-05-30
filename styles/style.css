@@ -1,0 +1,275 @@
+/* Base layout */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #fcf7f0; /* lighter cream */
+    color: #4b382a; /* rich dark brown */
+    padding: 20px;
+    margin: 0;
+}
+
+/* Header & Footer */
+/* Header and Menu Icon */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fef5ef;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+     position: relative;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-container img.logo {
+    height: 50px;
+}
+
+.menu-icon {
+    font-size: 26px;
+    cursor: pointer;
+    background-color: #c09572;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    user-select: none;
+      position: relative;
+    z-index: 1600; /* Make sure it's above header and sidebar */
+}
+
+.menu-icon:hover {
+    background-color: #a37455;
+}
+
+/* Sidebar sliding from right */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 220px;
+    height: 100%;
+    background-color: #fef5ef;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    padding-top: 60px;
+    transition: right 0.3s ease;
+    z-index: 1500; /* above header but below menu icon */
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 20px;
+    color: #3e2f1c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #e0cdbf;
+}
+
+.logo {
+    max-height: 40px;
+    width: auto;
+    display: block;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #5b3e20; /* changed to a visible brown color */
+    /* Removed text-shadow for better readability */
+}
+
+/* eBook container */
+/* Container grid */
+.ebooks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* responsive columns */
+    gap: 25px;
+    margin-top: 30px;
+    padding: 0 10px;
+}
+
+/* Each ebook card */
+.ebook-card {
+    background-color: #fff9f0;        /* very light cream */
+    border: 1px solid #d6bfa3;        /* soft warm beige */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(150, 115, 85, 0.12);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+.ebook-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(150, 115, 85, 0.25);
+}
+
+/* Cover image */
+.ebook-card img {
+    width: 100%;
+    height: 220px; /* fixed height */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 8px rgba(110, 80, 40, 0.18);
+}
+
+/* Title */
+.ebook-card h3 {
+    font-size: 1.3rem;
+    color: #5b3e20;
+    margin: 12px 0 8px;
+}
+
+/* Description */
+.ebook-card p {
+    font-size: 1rem;
+    color: #7a5a36;
+    margin-bottom: 12px;
+    flex-grow: 1; /* push price and button down */
+}
+
+/* Price */
+.ebook-card strong {
+    display: block;
+    color: #9b6f3a;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+/* View Details Button */
+.btn-primary {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #a87e5b;
+    color: #f7f2eb;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 3px 6px rgba(168, 126, 91, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #8c6649;
+    box-shadow: 0 5px 15px rgba(140, 102, 73, 0.6);
+    outline: none;
+}
+
+/* Individual book style */
+.ebook {
+    background-color: #fff9f0; /* very light cream */
+    border: 1px solid #d6bfa3; /* soft warm beige */
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(150, 115, 85, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.ebook:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(150, 115, 85, 0.25);
+}
+
+/* Book cover */
+.ebook img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    box-shadow: 0 3px 8px rgba(110, 80, 40, 0.18);
+}
+
+/* Book title */
+.ebook h3 {
+    font-size: 1.3rem;
+    margin: 12px 0 6px;
+    color: #5b3e20;
+}
+
+/* Book description */
+.ebook p {
+    font-size: 1rem;
+    color: #7a5a36;
+    margin-bottom: 12px;
+}
+
+/* Price */
+.ebook strong {
+    display: block;
+    margin-bottom: 14px;
+    color: #9b6f3a;
+}
+
+/* View link */
+.ebook a {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #a87e5b;
+    color: #f7f2eb;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 3px 6px rgba(168, 126, 91, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ebook a:hover {
+    background-color: #8c6649;
+    box-shadow: 0 5px 15px rgba(140, 102, 73, 0.6);
+}
+
+/* Footer */
+footer {
+    margin-top: 60px;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #5e3d2a; /* darker warm brown */
+    color: #f7f2eb;
+    padding: 22px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 12px rgba(94, 61, 42, 0.35);
+    transition: background-color 0.4s ease;
+}
+footer:hover {
+    background-color: #4b2f1e;
+}
+
+.details-button {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #c09572;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.details-button:hover {
+    background-color: #a37455;
+}
